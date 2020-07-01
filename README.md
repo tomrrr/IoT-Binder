@@ -1,4 +1,4 @@
-IoT-Binder By Charlie and Tom
+# IoT-Binder By Charlie and Tom
 This is a entry in SERAS Environment Making Competition
 
 This code is designed to contol a binder allowing a greater range of activity (maybe swap to movement) for people who bind.
