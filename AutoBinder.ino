@@ -13,7 +13,7 @@ WiFiServer server(80);
 void setup()
 {
     Serial.begin(115200);
-    pinMode(motorOneIn, OUTPUT);      // set the LED pin mode
+    pinMode(motorOneIn, OUTPUT);      // set the pins for the Motors
     pinMode(motorOneOut, OUTPUT);
     pinMode(motorTwoIn, OUTPUT);
     pinMode(motorTwoOut, OUTPUT);
@@ -84,25 +84,25 @@ void loop(){
 
         // Check to see if the client request was "GET /oneIn" or "GET /oneOut":
         if (currentLine.endsWith("GET /oneIn")) {
-          digitalWrite(motorOneIn, HIGH);               // GET /H turns the LED on
+          digitalWrite(motorOneIn, HIGH);               // GET /oneIn tightens the Motor 
           delay(500);
-          digitalWrite(motorOneIn, LOW);                // GET /L turns the LED off
+          digitalWrite(motorOneIn, LOW);                
         }
         if (currentLine.endsWith("GET /oneOut")) {
-          digitalWrite(motorOneOut, HIGH);               // GET /H turns the LED on
+          digitalWrite(motorOneOut, HIGH);              // GET /oneOut loosens the Motor off
           delay(500);
-          digitalWrite(motorOneOut, LOW);                // GET /L turns the LED off
+          digitalWrite(motorOneOut, LOW);                
         }
         // Check to see if the client request was "GET /twoOut" or "GET /twoIn":
         if (currentLine.endsWith("GET /twoIn")) {
-          digitalWrite(motorTwoIn, HIGH);               // GET /H turns the LED on
+          digitalWrite(motorTwoIn, HIGH);               // GET /twoIn tightens the Motor
           delay(500);
-          digitalWrite(motorTwoIn, LOW);                // GET /L turns the LED off
+          digitalWrite(motorTwoIn, LOW);                
         }
         if (currentLine.endsWith("GET /twoOut")) {
-          digitalWrite(motorTwoOut, HIGH);               // GET /H turns the LED on
+          digitalWrite(motorTwoOut, HIGH);              // GET /twoOut loosens the Motor off
           delay(500);
-          digitalWrite(motorTwoOut, LOW);                // GET /L turns the LED off
+          digitalWrite(motorTwoOut, LOW);                
         }
       }
     }
